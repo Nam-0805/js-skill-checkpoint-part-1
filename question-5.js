@@ -17,5 +17,26 @@ const products = [
   },
 ];
 
-const promotionCode = "";
-// เริ่มเขียนโค้ดตรงนี้
+const promotionCode = ""; //บรรจุ String โค้ดส่วนลด
+
+function calculateTotalPrice (products,promotionCode) {
+  let totalPrice = 0;
+  let saleTotalPrice = 0;
+  for (i = 0; i < products.length ; i++) {
+    totalPrice = totalPrice + ( products[i].price * products[i].quantity );
+  }
+  if (promotionCode = "SALE50" ) {
+    saleTotalPrice = totalPrice * 0.5 ;
+  }
+  else if (promotionCode = "SALE20" ) {
+    saleTotalPrice = totalPrice * 0.8 ;
+  }
+  else {
+
+  };
+
+  return saleTotalPrice;
+  }
+
+
+console.log(calculateTotalPrice (products,promotionCode));
